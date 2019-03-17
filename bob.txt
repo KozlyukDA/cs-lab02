@@ -1,0 +1,139 @@
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob
+$ git clone https://github.com/KozlyukDA/cs-lab02.git project
+Cloning into 'project'...
+remote: Enumerating objects: 18, done.
+remote: Counting objects: 100% (18/18), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 18 (delta 2), reused 18 (delta 2), pack-reused 0
+Unpacking objects: 100% (18/18), done.
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob
+$ cd project
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git config user.name 'Bob(UtkinRoma)'                                         
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git config user.email 'bob@example.com'
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git commit -m 'code: добавленно произведение чисел'
+[master bdca70e] code: добавленно произведение чисел
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git push -u origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 425 bytes | 141.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KozlyukDA/cs-lab02.git
+   18ff701..bdca70e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/KozlyukDA/cs-lab02
+   bdca70e..0a4ed98  master     -> origin/master
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git commit -m 'code: вывод минимума'                                          [master c1e0749] code: вывод минимума
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git push
+To https://github.com/KozlyukDA/cs-lab02.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/KozlyukDA/cs-lab02.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/KozlyukDA/cs-lab02
+   0a4ed98..7e18e09  master     -> origin/master
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git log --oneline --decorate --all --graph
+* c1e0749 (HEAD -> master) code: вывод минимума
+| * 7e18e09 (origin/master, origin/HEAD) code: вывод максимума
+| * 0a4ed98 code: добавлено частное чисел
+|/
+* bdca70e code: добавленно произведение чисел
+* 18ff701 git: игнорируем bin и obj
+* ab7e603 code: добавлена разность чисел
+* 94e73f9 code: добавлена сумма чисел
+* d801d1c code: добавлен ввод чисел
+* 1ec0526 build: сделал коммит
+* ad41a42 code: заготовка программы
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git rebase origin/master
+First, rewinding head to replay your work on top of it...
+Applying: code: вывод минимума
+Using index info to reconstruct a base tree...
+M       main.cpp
+Falling back to patching base and 3-way merge...
+Auto-merging main.cpp
+CONFLICT (content): Merge conflict in main.cpp
+error: Failed to merge in the changes.
+hint: Use 'git am --show-current-patch' to see the failed patch
+Patch failed at 0001 code: вывод минимума
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master|REBASE 1/1)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master|REBASE 1/1)
+$ git rebase --continue
+Applying: code: вывод минимума
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git log --oneline --decorate --all --graph
+* 39fa355 (HEAD -> master) code: вывод минимума
+* 7e18e09 (origin/master, origin/HEAD) code: вывод максимума
+* 0a4ed98 code: добавлено частное чисел
+* bdca70e code: добавленно произведение чисел
+* 18ff701 git: игнорируем bin и obj
+* ab7e603 code: добавлена разность чисел
+* 94e73f9 code: добавлена сумма чисел
+* d801d1c code: добавлен ввод чисел
+* 1ec0526 build: сделал коммит
+* ad41a42 code: заготовка программы
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/bob/project (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 414 bytes | 103.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KozlyukDA/cs-lab02.git
+   7e18e09..39fa355  master -> master

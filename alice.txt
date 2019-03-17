@@ -1,0 +1,388 @@
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project
+$ git init
+Initialized empty Git repository in D:/Lupa/alice/project/.git/
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git config user.name 'Alice (UtkinRoma)'
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git config user.email 'alice@example.com'
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bin/
+        main.cpp
+        obj/
+        project.cbp
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commin -m 'code: заготовка программы'
+git: 'commin' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: заготовка программы'
+[master (root-commit) ad41a42] code: заготовка программы
+ 1 file changed, 9 insertions(+)
+ create mode 100644 main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add project.cbp                                                           
+warning: LF will be replaced by CRLF in project.cbp.
+The file will have its original line endings in your working directory
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'build: сделал коммит'                                          
+[master 1ec0526] build: сделал коммит
+ 1 file changed, 43 insertions(+)
+ create mode 100644 project.cbp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: добавлен ввод чисел'                                     [master d801d1c] code: добавлен ввод чисел
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add -u
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: добавлен ввод чисел'
+On branch master
+Untracked files:
+        bin/
+        obj/
+
+nothing added to commit but untracked files present
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add -u
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: добавлен ввод чисел'
+On branch master
+Untracked files:
+        bin/
+        obj/
+
+nothing added to commit but untracked files present
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add -u
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: добавлена сумма чисел'
+[master 94e73f9] code: добавлена сумма чисел
+ 1 file changed, 1 insertion(+)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add -u
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: добавлена разность чисел'
+[master ab7e603] code: добавлена разность чисел
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git log --oneline --decorate --all --graph                                    
+* ab7e603 (HEAD -> master) code: добавлена разность чисел
+* 94e73f9 code: добавлена сумма чисел
+* d801d1c code: добавлен ввод чисел
+* 1ec0526 build: сделал коммит
+* ad41a42 code: заготовка программы
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git log --oneline --decorate
+ab7e603 (HEAD -> master) code: добавлена разность чисел
+94e73f9 code: добавлена сумма чисел
+d801d1c code: добавлен ввод чисел
+1ec0526 build: сделал коммит
+ad41a42 code: заготовка программы
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git log --stat                                                                
+commit ab7e603f9f093a389b539bff474507632490cb97 (HEAD -> master)
+Author: Alice (UtkinRoma) <alice@example.com>
+Date:   Mon Mar 18 00:28:35 2019 +0300
+
+    code: добавлена разность чисел
+
+ main.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+commit 94e73f9ead32b2782428508682f2f78b0f40e4d4
+Author: Alice (UtkinRoma) <alice@example.com>
+Date:   Mon Mar 18 00:28:05 2019 +0300
+
+    code: добавлена сумма чисел
+
+ main.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit d801d1c789bb3e110b295f9285b237a9aaa17416
+Author: Alice (UtkinRoma) <alice@example.com>
+Date:   Mon Mar 18 00:26:45 2019 +0300
+
+    code: добавлен ввод чисел
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git log --grep "build:"                                                       
+commit 1ec0526f0bec2486e9d4993d7717c6d27e0c0705
+Author: Alice (UtkinRoma) <alice@example.com>
+Date:   Mon Mar 18 00:25:25 2019 +0300
+
+    build: сделал коммит
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git log -- project.cbp                                                        
+commit 1ec0526f0bec2486e9d4993d7717c6d27e0c0705
+Author: Alice (UtkinRoma) <alice@example.com>
+Date:   Mon Mar 18 00:25:25 2019 +0300
+
+    build: сделал коммит
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git show HEAD~1                                                               
+commit 94e73f9ead32b2782428508682f2f78b0f40e4d4
+Author: Alice (UtkinRoma) <alice@example.com>
+Date:   Mon Mar 18 00:28:05 2019 +0300
+
+    code: добавлена сумма чисел
+
+diff --git a/main.cpp b/main.cpp
+index b903969..b2f34ce 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -7,4 +7,5 @@ int main()
+ cout << "Enter A and B: ";
+ int a, b;
+ cin >> a >> b;
++cout << "A + B = " << a + b << '\n';
+ }
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        project.depend
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add .gitignore
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'git: игнорируем bin и obj'                                     
+[master 18ff701] git: игнорируем bin и obj
+ 1 file changed, 3 insertions(+)
+ create mode 100644 .gitignore
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git show HEAD~1                                                               
+commit ab7e603f9f093a389b539bff474507632490cb97
+Author: Alice (UtkinRoma) <alice@example.com>
+Date:   Mon Mar 18 00:28:35 2019 +0300
+
+    code: добавлена разность чисел
+
+diff --git a/main.cpp b/main.cpp
+index b2f34ce..c70e10f 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -7,5 +7,6 @@ int main()
+ cout << "Enter A and B: ";
+ int a, b;
+ cin >> a >> b;
+-cout << "A + B = " << a + b << '\n';
++cout << "A + B = " << a + b << '\n'
++<< "A - B = " << a - b << '\n';
+ }
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git diff
+diff --git a/main.cpp b/main.cpp
+index c70e10f..666764d 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -8,5 +8,6 @@ cout << "Enter A and B: ";
+ int a, b;
+ cin >> a >> b;
+ cout << "A + B = " << a + b << '\n'
+-<< "A - B = " << a - b << '\n';
++<< "A - B = " << a - b << '\n'
++<< "A * B = " << a * b << '\n';
+ }
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git diff ad41a42 ab7e603
+diff --git a/main.cpp b/main.cpp
+index b4392ec..c70e10f 100644
+--- a/main.cpp
++++ b/main.cpp
+@@ -4,6 +4,9 @@ using namespace std;
+
+ int main()
+ {
+-    cout << "Hello world!" << endl;
+-    return 0;
++cout << "Enter A and B: ";
++int a, b;
++cin >> a >> b;
++cout << "A + B = " << a + b << '\n'
++<< "A - B = " << a - b << '\n';
+ }
+diff --git a/project.cbp b/project.cbp
+new file mode 100644
+index 0000000..e066312
+--- /dev/null
++++ b/project.cbp
+@@ -0,0 +1,43 @@
++<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: добавлено произведение чисел'
+[master 0f3cfe3] code: добавлено произведение чисел
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git reset --hard HEAD~1
+HEAD is now at 18ff701 git: игнорируем bin и obj
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git checkout HEAD -- main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git remote add origin https://github.com/KozlyukDA/cs-lab02.git
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git push -u origin master
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (18/18), 2.33 KiB | 397.00 KiB/s, done.
+Total 18 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/KozlyukDA/cs-lab02.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/KozlyukDA/cs-lab02
+   18ff701..bdca70e  master     -> origin/master
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git pull --ff-only
+Updating 18ff701..bdca70e
+Fast-forward
+ main.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: добавлено частное чисел'
+[master 0a4ed98] code: добавлено частное чисел
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 419 bytes | 139.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KozlyukDA/cs-lab02.git
+   bdca70e..0a4ed98  master -> master
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git commit -m 'code: вывод максимума'
+[master 7e18e09] code: вывод максимума
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 433 bytes | 144.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/KozlyukDA/cs-lab02.git
+   0a4ed98..7e18e09  master -> master
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git branch double
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git checkout double
+Switched to branch 'double'
+M       project.cbp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (double)
+$ git add main.cpp
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (double)
+$ git commit -m 'code: тип данных double'
+[double 2165695] code: тип данных double
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (double)
+$ git checkout master
+Switched to branch 'master'
+M       project.cbp
+Your branch is up to date with 'origin/master'.
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git log --oneline --decorate --all --graph                                    
+* 2165695 (double) code: тип данных double
+* 7e18e09 (HEAD -> master, origin/master) code: вывод максимума
+* 0a4ed98 code: добавлено частное чисел
+* bdca70e code: добавленно произведение чисел
+* 18ff701 git: игнорируем bin и obj
+* ab7e603 code: добавлена разность чисел
+* 94e73f9 code: добавлена сумма чисел
+* d801d1c code: добавлен ввод чисел
+* 1ec0526 build: сделал коммит
+* ad41a42 code: заготовка программы
+
+romau@LAPTOP-4PKQG32S MINGW32 /d/Lupa/alice/project (master)
+$ git merge double
+Updating 7e18e09..2165695
+Fast-forward
+ main.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
